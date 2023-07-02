@@ -6,7 +6,7 @@ mod logic;
 mod output;
 pub struct HanInfo {
     pub hangul:         String,
-    pub decomp:         Vec<char>,
+    pub decomp:         Vec<Vec<char>>,
     pub pronounced_as:  String,
 }
 
@@ -34,10 +34,14 @@ fn arg_tests(args: &mut Vec<String>) {
 }
 
 fn create_info() -> HanInfo {
-    let info = HanInfo{
-        hangul:         logic::hangul(),
-        decomp:         logic::decomp(),
-        pronounced_as:  logic::pronounce(),
+    let hangul = logic::hangul();
+    let decomp = logic::decomp(hangul.clone());
+    let pronounced_as = logic::pronounce();
+    
+    let info = HanInfo {
+        hangul,
+        decomp,
+        pronounced_as,
     };
 
     return info;
