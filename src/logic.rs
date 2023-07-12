@@ -4,7 +4,7 @@ pub fn hangul() -> String {
 	let mut args: Vec<String> = std::env::args().collect();
 	//removes exec path
 	args.remove(0);
-	return args[0].clone();	
+	return args[0].clone();
 }
 
 pub fn decomp(hangul: String) -> Vec<Vec<char>> {
@@ -12,6 +12,7 @@ pub fn decomp(hangul: String) -> Vec<Vec<char>> {
 	let mut decomp_vec: Vec<Vec<char>> = Vec::new();
 
 	for han_char in hanc_vec {
+		//taken from unic hangul docs
 		let mut decomposed: Vec<char> = vec![]; {
 			let mut collect_decomposed = |chr: char| {
 			    decomposed.push(chr);
@@ -23,7 +24,78 @@ pub fn decomp(hangul: String) -> Vec<Vec<char>> {
 	return decomp_vec;
 }
 
-pub fn pronounce() -> String {
+pub fn pronounce(decomp: Vec<Vec<char>>) -> String {
+	let mut new_decomp = decomp.clone();
 
-todo!()
+	for window in decomp.windows(2) {
+		// would be cool to move into a windows.filter closure
+		// tests for if first hangul block has 3 
+
+		if window[0].len() == 3  {
+			let trailing = *window[0].get(2).unwrap();
+			let leading = *window[1].get(0).unwrap();
+			
+			let final_han = rules(trailing, leading);
+
+			println!("final han {}, {}", final_han.0, final_han.1);
+
+
+			for i in 0..(new_decomp.len() - 1) {
+				if new_decomp[i] == *window[0] {
+					new_decomp[i][2] = final_han.0;
+					new_decomp[i+1][0] = final_han.1;
+				}
+			}
+			// filters out blank spaces. 학호 -> 하코
+			new_decomp = filter_x(&mut new_decomp);
+		}
+	}
+	for ss in new_decomp {
+	    for sssss in ss {
+		  println!("{}", sssss);
+	    }
+	}
+	return String::from("deez");
+}
+fn rules(trailing: char, leading: char) -> (char, char) {
+	// trailing consonant of the first window
+	// leading consonant of the second window
+	let mut new_chars: (char, char) = (trailing, leading);
+	//giyeok ᆨ ᆩ ᆿ ᆰ
+	//'ᆨ'|'ᆩ'|'ᆿ'|'ᆰ'
+	// x means to remove that char
+	match leading {
+		'ᄒ' => {
+			match trailing {
+				'ᆨ' => {new_chars.0 = 'x'; new_chars.1 ='ᄏ'},
+				'ᆸ' => new_chars.0 = 'ᇁ',
+				'ᆮ'|'ᆽ' => new_chars.0 = 'ᆾ',
+				_ => todo!(),
+			}
+	    	},
+	    'ᆯ' => todo!(),
+	    'ᆫ'|'ᆷ' => todo!(),
+
+	    _ => todo!(),
+	}
+
+	return new_chars;
+}
+
+fn compose(decomposed: Vec<Vec<char>>) -> String {
+	
+	todo!()
+}
+fn filter_x(decomposed: &mut Vec<Vec<char>>) -> Vec<Vec<char>> {
+	for i in 0..decomposed.len() {
+		for j in 0..decomposed[i].len() {
+			if decomposed[i][j] == 'x' {
+				println!("here");
+				decomposed[i].remove(j);
+			}
+		}
+	}
+	//let immut: Vec<Vec<char>> = decomposed.into_iter().map(|x| *x).collect();
+
+	return decomposed.to_vec();
 }
