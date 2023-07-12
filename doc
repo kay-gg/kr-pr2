@@ -1,3 +1,5 @@
+// https://unicode-table.com/en/blocks/hangul-jamo/
+
 krpr [args] [text] 
 by default (no args) returns just korean text
 
@@ -5,3 +7,40 @@ strip args
 change state of state machine based on args
 do stuff to text to change it into how its supposed to be pronounced
 output text to terminal
+
+=========================================
+
+Choseong 
+	1100 - 1112 hex
+	leading consonants or syllable initial characters
+Jungseong
+	1160 - 1175 hex
+	vowels or syllable peak characters
+Jongseong
+	11A8 - 11C2 hex
+	trailing consonants, or syllable final characters
+
+=========================================
+
+ㄱㄲㅋ ㅈㅊ     ㄷㅌ ㅂㅍ   ㅅㅆ    ㅁㄴㅇㄹㅎ      possible as last letter
+3 1 1  2 2     2 2  3 1    2 2    1 1 1 0 4      possible rules
+
+nasalization
+	ㄱㄲㅋ ->               ㅇ if before ㄴ/ㅁ 격노 -> 경노 / 국물 -> 궁물
+	ㄷㅌㅅㅆㅈㅊㅎ ->        ㄴ if before ㄴ/ㅁ 
+	ㅂㅃㅍ ->               ㅁ if before ㄴ/ㅁ
+aspiration
+	ㅎ ->                   ㅌ if before ㄷ
+	ㅎ ->                   ㅊ if before ㅈ
+	ㅎ ->                   ㅆ if before ㅅ
+	ㅎ ->                   ㅋ if before ㄱ
+
+	ㄱ ->                   ㅋ if before ㅎ 
+	ㅂ ->                   ㅍ if before ㅎ
+	ㄷㅌㅅㅆㅈㅊㅎ ->        ㅌ if before ㅎ
+assim / alterations with ㄹ
+	ㅁㄹ -> ㅁㄴ
+	ㅇㄹ -> ㅇㄴ
+	ㄱㄹ -> ㅇㄴ
+	ㅂㄹ -> ㅁㄴ
+	ㄴㄹ -> ㄹㄹ EXCEPTION {의견란[의ː견난]  임진란[임ː진난]  생산량[생산냥]  결단력[결딴녁] 공권력[공꿘녁]  동원령[동ː원녕]  상견례[상견녜]  횡단로[횡단노] 이원론[이ː원논]  입원료[이붠뇨]  구근류[구근뉴]}

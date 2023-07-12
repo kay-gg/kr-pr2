@@ -26,17 +26,10 @@ fn main() {
     let info = create_info();
     output::default(info);
 }
-
-fn arg_tests(args: &mut Vec<String>) {
-    assert!(!args.is_empty(), "You didn't enter a word.");
-    // args start with path to executable, so len is 2
-    assert_eq!(args.len(), 1, "Enter 1 Korean word.")
-}
-
 fn create_info() -> HanInfo {
     let hangul = logic::hangul();
     let decomp = logic::decomp(hangul.clone());
-    let pronounced_as = logic::pronounce();
+    let pronounced_as = logic::pronounce(decomp.clone());
     
     let info = HanInfo {
         hangul,
@@ -45,4 +38,10 @@ fn create_info() -> HanInfo {
     };
 
     return info;
+}
+
+fn arg_tests(args: &mut Vec<String>) {
+    assert!(!args.is_empty(), "You didn't enter a word.");
+    // args start with path to executable, so len is 2
+    assert_eq!(args.len(), 1, "Enter 1 Korean word.")
 }
