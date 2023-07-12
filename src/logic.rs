@@ -1,4 +1,4 @@
-use unic_ucd_hangul::decompose_syllable;
+use unic_ucd_hangul::{decompose_syllable, compose_syllable};
 
 pub fn hangul() -> String {
 	let mut args: Vec<String> = std::env::args().collect();
@@ -37,25 +37,27 @@ pub fn pronounce(decomp: Vec<Vec<char>>) -> String {
 			
 			let final_han = rules(trailing, leading);
 
-			println!("final han {}, {}", final_han.0, final_han.1);
-
-
 			for i in 0..(new_decomp.len() - 1) {
 				if new_decomp[i] == *window[0] {
 					new_decomp[i][2] = final_han.0;
 					new_decomp[i+1][0] = final_han.1;
 				}
 			}
-			// filters out blank spaces. 학호 -> 하코
+			// filters out blank chars. 학호 -> 하코
 			new_decomp = filter_x(&mut new_decomp);
 		}
 	}
-	for ss in new_decomp {
-	    for sssss in ss {
-		  println!("{}", sssss);
-	    }
-	}
-	return String::from("deez");
+	
+	// testing 
+	// let mut zz = 0;
+	// for ss in new_decomp {
+	// 	println!("\n{}", zz);
+	//     for sssss in ss {
+	// 	  println!("{}", sssss);
+	//     }
+	// 	zz = zz + 1;
+	// }
+	return compose(new_decomp);
 }
 fn rules(trailing: char, leading: char) -> (char, char) {
 	// trailing consonant of the first window
@@ -63,6 +65,7 @@ fn rules(trailing: char, leading: char) -> (char, char) {
 	let mut new_chars: (char, char) = (trailing, leading);
 	//giyeok ᆨ ᆩ ᆿ ᆰ
 	//'ᆨ'|'ᆩ'|'ᆿ'|'ᆰ'
+
 	// x means to remove that char
 	match leading {
 		'ᄒ' => {
@@ -82,15 +85,10 @@ fn rules(trailing: char, leading: char) -> (char, char) {
 	return new_chars;
 }
 
-fn compose(decomposed: Vec<Vec<char>>) -> String {
-	
-	todo!()
-}
 fn filter_x(decomposed: &mut Vec<Vec<char>>) -> Vec<Vec<char>> {
 	for i in 0..decomposed.len() {
 		for j in 0..decomposed[i].len() {
 			if decomposed[i][j] == 'x' {
-				println!("here");
 				decomposed[i].remove(j);
 			}
 		}
@@ -98,4 +96,18 @@ fn filter_x(decomposed: &mut Vec<Vec<char>>) -> Vec<Vec<char>> {
 	//let immut: Vec<Vec<char>> = decomposed.into_iter().map(|x| *x).collect();
 
 	return decomposed.to_vec();
+}
+
+fn compose(decomposed: Vec<Vec<char>>) -> String {
+	let mut final_string = String::new();
+
+	for v in decomposed {
+		let mut composed: char = '\0';
+
+		for ch in 0..v.len()-1 {
+			composed = compose_syllable(v[ch], v[ch+1]).unwrap();
+		}
+		final_string.push(composed);
+	}
+	return final_string;
 }
