@@ -1,7 +1,4 @@
 extern crate unic_ucd_hangul;
-// unic_ucd_hangul gives these letters 
-// https://unicode-table.com/en/blocks/hangul-jamo/
-// rather than the normal hangul
 mod logic;
 mod output;
 pub struct HanInfo {

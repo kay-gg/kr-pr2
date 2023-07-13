@@ -70,11 +70,11 @@ fn rules(trailing: char, leading: char) -> (char, char) {
 	match leading {
 		'ᄒ' => {
 			match trailing {
-				'ᆨ' => {new_chars.0 = 'x'; new_chars.1 ='ᄏ'},
-				'ᆸ' => new_chars.0 = 'ᇁ',
-				'ᆮ'|'ᆽ' => new_chars.0 = 'ᆾ',
+				'ᆨ'                  => {new_chars.0 = 'x'; new_chars.1 ='ᄏ'},
+				'ᆸ'                  => {new_chars.0 = 'x'; new_chars.1 ='ᄑ'},
+				'ᆮ'|'ᆽ'|'ᆺ'|'ᆻ'     => {new_chars.0 = 'x'; new_chars.1 ='ᄐ'},
 				_ => todo!(),
-			}
+				}
 	    	},
 	    'ᆯ' => todo!(),
 	    'ᆫ'|'ᆷ' => todo!(),
@@ -102,11 +102,11 @@ fn compose(decomposed: Vec<Vec<char>>) -> String {
 	let mut final_string = String::new();
 
 	for v in decomposed {
-		let mut composed: char = '\0';
-
-		for ch in 0..v.len()-1 {
-			composed = compose_syllable(v[ch], v[ch+1]).unwrap();
+		let mut composed = compose_syllable(v[0], v[1]).unwrap();
+		if v.len() == 3 {
+			composed = compose_syllable(composed, v[2]).unwrap();
 		}
+
 		final_string.push(composed);
 	}
 	return final_string;

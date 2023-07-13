@@ -7,7 +7,7 @@
             "type": "cppvsdbg",
             "request": "launch",
             "program": "${workspaceRoot}/target/debug/kr-pr2.exe",
-            "args": ["학호"],
+            "args": ["입학"],
             "stopAtEntry": false,
             "cwd": "${workspaceRoot}",
             "environment": [],
