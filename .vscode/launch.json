@@ -13,13 +13,5 @@
             "environment": [],
             "console": "integratedTerminal"
         },
-        {
-            "name": "(OSX) Launch",
-            "type": "lldb",
-            "request": "launch",
-            "program": "${workspaceRoot}/target/debug/foo",
-            "args": [],
-            "cwd": "${workspaceRoot}",
-        }
     ]
 }
