@@ -68,20 +68,33 @@ fn rules(trailing: char, leading: char) -> (char, char) {
         'ᄒ' => match trailing {
             'ᆨ' => {
                 new_chars.0 = 'x';
-                new_chars.1 = 'ᄏ'
+                new_chars.1 = 'ᄏ';
             }
             'ᆸ' => {
                 new_chars.0 = 'x';
-                new_chars.1 = 'ᄑ'
+                new_chars.1 = 'ᄑ';
             }
             'ᆮ' | 'ᆽ' | 'ᆺ' | 'ᆻ' => {
                 new_chars.0 = 'x';
-                new_chars.1 = 'ᄐ'
+                new_chars.1 = 'ᄐ';
             }
 			
-            _ => todo!(),
+            _ => {
+                new_chars.0 = trailing;
+                new_chars.1 = leading;
+            }
         },
-
+        'ᄀ' => match trailing {
+            'ᆷ' | 'ᆱ'  => {
+                new_chars.0 = 'ᆼ';
+                new_chars.1 = leading;
+            }
+            
+            _ => {
+                new_chars.0 = trailing;
+                new_chars.1 = leading;
+            } 
+        }
         'ᆯ' => match trailing {
 
             _ => {

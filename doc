@@ -24,23 +24,34 @@ Jongseong
 ㄱㄲㅋ ㅈㅊ     ㄷㅌ ㅂㅍ   ㅅㅆ    ㅁㄴㅇㄹㅎ      possible as last letter
 4 1 1  3 2     3 2  3 1    3 2    1 1 1 5 8      possible rules
 
-nasalization
-	ㄱㄲㅋ ㄴ/ㅁ 		-> ㅇ ㄴ/ㅁ
-	ㄷㅌㅅㅆㅈㅊㅎ ㄴ/ㅁ 	 -> ㄴ ㄴ/ㅁ
-	ㅂㅃㅍ ㄴ/ㅁ 		-> ㅁ ㄴ/ㅁ
-aspiration
-	ㅎㄷ  			-> ㅌx
-	ㅎㅈ 				-> ㅊx
-	ㅎㅅ 				-> ㅆx
-	ㅎㄱ 				-> ㅋx
+nasalization 
+	k stop + ㄴ			-> ㅇㅁ
+	k stop + ㅁ			-> ㅇㅁ
+	
+	t stop + ㄴ			-> ㄴㄴ
+	t stop + ㅁ			-> ㄴㅁ
 
-	ㄱ ㅎ 			-> ㅋx
-	ㅂ ㅎ 			-> ㅍx
-	ㄷㅌㅅㅆㅈㅊ ㅎ   	 -> ㅌx
-assim / alterations with ㄹ
+	p stop + ㄴ			-> ㅁㄴ
+	p stop + ㅁ			-> ㅁㅁ
+aspiration
+	ㄱㅎ				-> xㅋ
+	t stops + ㅎㄱ		-> xㅌ
+	ㅂㅎ				-> xㅍ
+	skipping t stop + 히히 	-> x지
+
+	ㅎㅅ				-> xㅆ
+	ㅎㅈ				-> xㅊ
+	ㅎㄷ				-> xㅌ
+	ㅎㄱ				-> xㅋ
+	unless ᆭᆭ		    -> ㄴㅋ
+palatalization 
+	these cant be done bc they 
+	involve grammatical meaning
+assimilations and alterations related to ㄹ
 	ㅁㄹ 				-> ㅁㄴ
-	ㅇㄹ 				-> ㅇㄴ
-	ㄱㄹ 				-> ㅇㄴ
-	ㅂㄹ 				-> ㅁㄴ
-	ㄴㄹ 				-> ㄹㄹ 
+	ㅇㄹ				-> ㅇㄴ
+	ㄱㄹ				-> ㅇㄴ
+	ㅂㄹ				-> ㅁㄴ
+	ㄴㄹ				-> ㄹㄹ
+
 EXCEPTION {의견란[의ː견난]  임진란[임ː진난]  생산량[생산냥]  결단력[결딴녁] 공권력[공꿘녁]  동원령[동ː원녕]  상견례[상견녜]  횡단로[횡단노] 이원론[이ː원논]  입원료[이붠뇨]  구근류[구근뉴]}
