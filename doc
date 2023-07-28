@@ -21,29 +21,26 @@ Jongseong
 
 =========================================
 
-ㄱㄲㅋ ㅈㅊ     ㄷㅌ ㅂㅍ   ㅅㅆ    ㅁㄴㅇㄹㅎ      possible as last letter
-4 1 1  3 2     3 2  3 1    3 2    1 1 1 5 8      possible rules
-
 nasalization 
-	k stop + ㄴ			-> ㅇㅁ
-	k stop + ㅁ			-> ㅇㅁ
+	k stop + ㄴ			-> ㅇㄴ	done
+	k stop + ㅁ			-> ㅇㅁ	done
 	
-	t stop + ㄴ			-> ㄴㄴ
-	t stop + ㅁ			-> ㄴㅁ
+	t stop + ㄴ			-> ㄴㄴ	done
+	t stop + ㅁ			-> ㄴㅁ	done
 
-	p stop + ㄴ			-> ㅁㄴ
-	p stop + ㅁ			-> ㅁㅁ
+	p stop + ㄴ			-> ㅁㄴ	done
+	p stop + ㅁ			-> ㅁㅁ	done
 aspiration
-	ㄱㅎ				-> xㅋ
-	t stops + ㅎㄱ		-> xㅌ
-	ㅂㅎ				-> xㅍ
+	ㄱㅎ				-> xㅋ	done
+	t stops + ㅎㅎ		-> xㅌ	done
+	ㅂㅎ				-> xㅍ	done
 	skipping t stop + 히히 	-> x지
 
 	ㅎㅅ				-> xㅆ
 	ㅎㅈ				-> xㅊ
 	ㅎㄷ				-> xㅌ
 	ㅎㄱ				-> xㅋ
-	unless ᆭᆭ		    -> ㄴㅋ
+		unless ᆭㄱ	     -> ㄴㅋ
 palatalization 
 	these cant be done bc they 
 	involve grammatical meaning

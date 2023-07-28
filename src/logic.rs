@@ -78,17 +78,48 @@ fn rules(trailing: char, leading: char) -> (char, char) {
                 new_chars.0 = 'x';
                 new_chars.1 = 'ᄐ';
             }
-			
             _ => {
                 new_chars.0 = trailing;
                 new_chars.1 = leading;
             }
         },
-        'ᄀ' => match trailing {
-            'ᆷ' | 'ᆱ'  => {
+        'ᄂ' => match trailing {
+            'ᆨ' | 'ᆩ' | 'ᆿ' => {
                 new_chars.0 = 'ᆼ';
-                new_chars.1 = leading;
+                new_chars.1 = 'ᄂ';
+            },
+            'ᆮ' | 'ᆽ' | 'ᆺ' | 'ᆻ' => {
+                new_chars.0 = 'ᆫ';
+                new_chars.1 = 'ᄂ';
             }
+            'ᆸ' | 'ᇁ' | 'ᆲ' | 'ᆵ' => {
+                new_chars.0 = 'ᆷ';
+                new_chars.1 = 'ᄂ';
+            },
+            _ => {
+                new_chars.0 = trailing;
+                new_chars.1 = leading;
+            } 
+        },
+        'ᄆ' => match trailing {
+            'ᆨ' | 'ᆩ' | 'ᆿ' => {
+                new_chars.0 = 'ᆼ';
+                new_chars.1 = 'ᄆ';
+            }
+            'ᆮ' | 'ᆽ' | 'ᆺ' | 'ᆻ' => {
+                new_chars.0 = 'ᆫ';
+                new_chars.1 = 'ᄆ';
+            }
+            'ᆸ' | 'ᇁ' | 'ᆲ' | 'ᆵ' => {
+                new_chars.0 = 'ᆷ';
+                new_chars.1 = 'ᄆ';
+            },
+            _ => {
+                new_chars.0 = trailing;
+                new_chars.1 = leading;
+            } 
+        }
+        'ᄀ' => match trailing {
             
             _ => {
                 new_chars.0 = trailing;
@@ -103,7 +134,7 @@ fn rules(trailing: char, leading: char) -> (char, char) {
             } 
         }
         
-        'ᆫ' | 'ᆷ' => todo!(),
+
 
         // no rules to apply. just return the same jamos
         _ => {
