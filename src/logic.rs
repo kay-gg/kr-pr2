@@ -113,28 +113,46 @@ fn rules(trailing: char, leading: char) -> (char, char) {
             'ᆸ' | 'ᇁ' | 'ᆲ' | 'ᆵ' => {
                 new_chars.0 = 'ᆷ';
                 new_chars.1 = 'ᄆ';
-            },
+            }
+
+
+            _ => {
+                new_chars.0 = trailing;
+                new_chars.1 = leading;
+            } 
+        }
+        'ᄅ' => match trailing {
+            'ᆷ' => {
+                new_chars.0 = 'ᆷ';
+                new_chars.1 = 'ᄂ';
+            }
+            'ᆼ' => {
+                new_chars.0 = 'ᆼ';
+                new_chars.1 = 'ᄂ';
+            }
+            'ᆨ' => {
+                new_chars.0 = 'ᆼ';
+                new_chars.1 = 'ᄂ';
+            }
+            'ᆸ' => {
+                new_chars.0 = 'ᆷ';
+                new_chars.1 = 'ᄂ';
+            }
+            'ᆫ' => {
+                new_chars.0 = 'ᆯ';
+                new_chars.1 = 'ᄅ';
+            }
             _ => {
                 new_chars.0 = trailing;
                 new_chars.1 = leading;
             } 
         }
         'ᄀ' => match trailing {
-            
             _ => {
                 new_chars.0 = trailing;
                 new_chars.1 = leading;
             } 
         }
-        'ᆯ' => match trailing {
-
-            _ => {
-                new_chars.0 = trailing;
-                new_chars.1 = leading;
-            } 
-        }
-        
-
 
         // no rules to apply. just return the same jamos
         _ => {

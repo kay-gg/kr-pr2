@@ -44,11 +44,12 @@ aspiration
 palatalization 
 	these cant be done bc they 
 	involve grammatical meaning
+	bit out of scope for this program
 assimilations and alterations related to ㄹ
-	ㅁㄹ 				-> ㅁㄴ
-	ㅇㄹ				-> ㅇㄴ
-	ㄱㄹ				-> ㅇㄴ
-	ㅂㄹ				-> ㅁㄴ
-	ㄴㄹ				-> ㄹㄹ
+	ㅁㄹ 				-> ㅁㄴ	done
+	ㅇㄹ				-> ㅇㄴ	done
+	ㄱㄹ				-> ㅇㄴ	done
+	ㅂㄹ				-> ㅁㄴ	done
+	ㄴㄹ				-> ㄹㄹ	done
 
-EXCEPTION {의견란[의ː견난]  임진란[임ː진난]  생산량[생산냥]  결단력[결딴녁] 공권력[공꿘녁]  동원령[동ː원녕]  상견례[상견녜]  횡단로[횡단노] 이원론[이ː원논]  입원료[이붠뇨]  구근류[구근뉴]}
+EXCEPTION for ㄹ assim {의견란[의ː견난]  임진란[임ː진난]  생산량[생산냥]  결단력[결딴녁] 공권력[공꿘녁]  동원령[동ː원녕]  상견례[상견녜]  횡단로[횡단노] 이원론[이ː원논]  입원료[이붠뇨]  구근류[구근뉴]}
