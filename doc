@@ -36,11 +36,13 @@ aspiration
 	ㅂㅎ				-> xㅍ	done
 	skipping t stop + 히히 	-> x지
 
-	ㅎㅅ				-> xㅆ
-	ㅎㅈ				-> xㅊ
-	ㅎㄷ				-> xㅌ
-	ㅎㄱ				-> xㅋ
+// some of these rules (ᆭ and ᆶ) i cant confirm but listening to audio tells me they exist
+	ㅎㅅ				-> xㅆ	done
+	ㅎㅈ				-> xㅊ	done
+	ㅎㄷ				-> xㅌ	
+	ㅎㄱ				-> xㅋ	done
 		unless ᆭㄱ	     -> ㄴㅋ
+		unless ᆶㄱ	     -> ㄹㅋ
 palatalization 
 	these cant be done bc they 
 	involve grammatical meaning
