@@ -207,6 +207,26 @@ fn rules(trailing: char, leading: char) -> (char, char) {
                 new_chars.1 = leading;
             } 
         }
+        'ᄃ' => match trailing {
+            'ᇂ' => {
+                new_chars.0 = 'x';
+                new_chars.1 = 'ᄐ';
+            }
+            // this one i cant confirm on the wiki but just from listening experience
+            // it sounds like it probably is a rule, but not included on wiki.
+            'ᆶ' => {
+                new_chars.0 = 'ᆯ';
+                new_chars.1 = 'ᄐ';
+            }
+            'ᆭ' => {
+                new_chars.0 = 'ᆫ';
+                new_chars.1 = 'ᄐ';
+            }
+            _ => {
+                new_chars.0 = trailing;
+                new_chars.1 = leading;
+            } 
+        }
         // no rules to apply. just return the same jamos
         _ => {
             new_chars.0 = trailing;
