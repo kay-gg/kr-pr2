@@ -82,7 +82,7 @@ fn rules(trailing: char, leading: char) -> (char, char) {
                 new_chars.0 = trailing;
                 new_chars.1 = leading;
             }
-        },
+        }
         'ᄂ' => match trailing {
             'ᆨ' | 'ᆩ' | 'ᆿ' => {
                 new_chars.0 = 'ᆼ';
@@ -100,7 +100,7 @@ fn rules(trailing: char, leading: char) -> (char, char) {
                 new_chars.0 = trailing;
                 new_chars.1 = leading;
             } 
-        },
+        }
         'ᄆ' => match trailing {
             'ᆨ' | 'ᆩ' | 'ᆿ' => {
                 new_chars.0 = 'ᆼ';

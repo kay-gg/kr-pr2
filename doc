@@ -1,12 +1,5 @@
 // https://unicode-table.com/en/blocks/hangul-jamo/
 
-krpr [args] [text] 
-by default (no args) returns just korean text
-
-strip args
-do stuff to text to change it into how its supposed to be pronounced
-output text to terminal
-
 =========================================
 
 Choseong 
