@@ -4,7 +4,9 @@
 Building is simple. With krpr2 being built with rust, you will of course need rust, and cargo installed. After you install that, in a terminal, enter:
 
 ```git clone https://github.com/kyle-gardner/kr-pr2```
+
 ```cd ./kr-pr2```
+
 ```cargo build --release```
 
 Once you do that, look in the ```target/release``` folder for your executable.
